@@ -1,6 +1,11 @@
 import React from 'react';
-import Model from './3dModels/Model';
+import Model from './3dModels/Java';
 import Computer from './3dModels/Computer';
+import Nav from './Nav';
+import Csharp from './3dModels/Csharp';
+import Java from './3dModels/Java';
+import Javascript from './3dModels/Javascript';
+import Python from './3dModels/Python';
 
 4
 const Home = () => {
@@ -21,7 +26,6 @@ const Home = () => {
         
 
         <>
-
       <section className="flex ">
         <div className=" lg:w-3/5 bg-yellow-300 min-h-full z-10 w-14 " >
 
@@ -35,9 +39,17 @@ const Home = () => {
 I am a Junior Full Stack web develloper thrilled about learning each day. I made this portfolio to share my current and future Projects
               </p>
               <a  className="border-b border-gray-900 pb-2" onClick={Project_Section}>My Projects </a>
+              <div className="flex mt-28  h-56   ">
+              <Java/>
 
+              <Csharp/>
+
+              <Javascript/>
+
+         
+              </div>
             </div>
-            
+          
           </section>
 
 
@@ -46,12 +58,14 @@ I am a Junior Full Stack web develloper thrilled about learning each day. I made
         <div className=" lg:w-2/5 ">
 
             <img
-              className=" max-h-900px"
+              className="  max-h-full w-full"
               src="/public/img/bechir2.jpg"
               alt=""
             />
 
         </div>  
+
+          
       </section>
 
         </>

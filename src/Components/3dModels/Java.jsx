@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from '@react-three/drei';
 
 
-function Model() {
+function Java() {
   const [model, setModel] = useState(null);
   const gltfRef = useRef();
 
@@ -22,18 +22,18 @@ function Model() {
   useEffect(() => {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('/img/Java.glb', (gltf) => {
-      gltf.scene.scale.set(1.6,1.6, 1.6); // Adjust the scale as needed
+      gltf.scene.scale.set(1.6,1.6,1.6); // Adjust the scale as needed
       setModel(gltf.scene);
     });
   }, []);
 
   return (
     
-    <Canvas >
+    <Canvas  >
             <mesh visible>
         <ambientLight intensity={1} />
         {/* <directionalLight color="yellow" position={[2, 0, 5]} /> */}
-        <directionalLight color="yellow" position={[0, 0, 5]} />
+        <directionalLight  position={[0, 0, 5]} />
         <meshStandardMaterial color="hotpink" transparent />
         {model && <primitive object={model} ref={gltfRef} />}
         <OrbitControls    enableZoom={false}/>
@@ -43,4 +43,4 @@ function Model() {
   );
 }
 
-export default Model;
+export default Java;

@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from '@react-three/drei';
 
 
-function Csharp() {
+function Javascript() {
   const [model, setModel] = useState(null);
   const gltfRef = useRef();
 
@@ -21,8 +21,8 @@ function Csharp() {
   
   useEffect(() => {
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/img/RealCsharp.glb', (gltf) => {
-      gltf.scene.scale.set(2,2, 2); // Adjust the scale as needed
+    gltfLoader.load('/img/js.glb', (gltf) => {
+      gltf.scene.scale.set(1.7,1.7,1.7); // Adjust the scale as needed
       setModel(gltf.scene);
     });
   }, []);
@@ -33,7 +33,7 @@ function Csharp() {
             <mesh visible>
         <ambientLight intensity={1} />
         {/* <directionalLight color="yellow" position={[2, 0, 5]} /> */}
-        <directionalLight color="yellow" position={[0, 0, 5]} />
+        <directionalLight  />
         <meshStandardMaterial color="hotpink" transparent />
         {model && <primitive object={model} ref={gltfRef} />}
         <OrbitControls    enableZoom={false}/>
@@ -43,4 +43,4 @@ function Csharp() {
   );
 }
 
-export default Csharp;
+export default Javascript;
