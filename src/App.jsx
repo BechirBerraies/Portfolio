@@ -5,7 +5,6 @@ import { OrbitControls } from '@react-three/drei';
 import Home from './Components/Home';
 import Model from './Components/3dModels/Java';
 import Csharp from './Components/3dModels/Csharp';
-import ModelsPage from './Components/ModelsPage';
 import Computer from './Components/3dModels/Computer';
 import {Routes,Route} from 'react-router-dom'
 
@@ -24,7 +23,6 @@ function App() {
   return (
   <Routes>
 <Route path='/'  element={<Home/>}/>
-<Route path='/models' element={<ModelsPage/>}/>
   </Routes>
   );
 }

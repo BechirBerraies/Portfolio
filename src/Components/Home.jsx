@@ -1,11 +1,11 @@
 import React from 'react';
 import Model from './3dModels/Java';
 import Computer from './3dModels/Computer';
-import Nav from './Nav';
 import Csharp from './3dModels/Csharp';
 import Java from './3dModels/Java';
 import Javascript from './3dModels/Javascript';
 import Python from './3dModels/Python';
+import Nav from './Nav';
 
 4
 const Home = () => {
@@ -26,6 +26,7 @@ const Home = () => {
         
 
         <>
+        <Nav/>
       <section className="flex ">
         <div className=" lg:w-3/5 bg-yellow-300 min-h-full z-10 w-14 " >
 
