@@ -8,13 +8,21 @@ function Model() {
   const [model, setModel] = useState(null);
   const gltfRef = useRef();
 
-
+  useEffect(() => {
+    const animate = () => {
+      if (gltfRef.current) {
+        gltfRef.current.rotation.y -= 0.001; // Adjust the rotation speed as needed
+      }
+      requestAnimationFrame(animate);
+    };
+    animate();
+  }, [model]);
 
   
   useEffect(() => {
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/img/python2.glb', (gltf) => {
-      gltf.scene.scale.set(0.1, 0.1, 0.1); // Adjust the scale as needed
+    gltfLoader.load('/img/Java.glb', (gltf) => {
+      gltf.scene.scale.set(1.6,1.6, 1.6); // Adjust the scale as needed
       setModel(gltf.scene);
     });
   }, []);
@@ -28,7 +36,7 @@ function Model() {
         <directionalLight color="yellow" position={[0, 0, 5]} />
         <meshStandardMaterial color="hotpink" transparent />
         {model && <primitive object={model} ref={gltfRef} />}
-        <OrbitControls />
+        <OrbitControls    enableZoom={false}/>
                 </mesh>
       </Canvas>
 
