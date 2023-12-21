@@ -22,7 +22,7 @@ function Python() {
   useEffect(() => {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load('/img/Python2.glb', (gltf) => {
-      gltf.scene.scale.set(1.7,1.7,1.7); // Adjust the scale as needed
+      gltf.scene.scale.set(1.9,1.9,1.9); // Adjust the scale as needed
       setModel(gltf.scene);
     });
   }, []);

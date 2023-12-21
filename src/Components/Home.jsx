@@ -1,13 +1,12 @@
 import React from 'react';
-import Model from './3dModels/Java';
-import Computer from './3dModels/Computer';
 import Csharp from './3dModels/Csharp';
 import Java from './3dModels/Java';
 import Javascript from './3dModels/Javascript';
 import Python from './3dModels/Python';
 import Nav from './Nav';
+import { Link } from 'react-router-dom';
 
-4
+
 const Home = () => {
 
   const Project_Section = () =>{
@@ -21,15 +20,14 @@ const Home = () => {
 
 
 
-
     return (
         
 
         <>
-        <Nav/>
+        {/* <Nav/> */}
       <section className="flex ">
         <div className=" lg:w-3/5 bg-yellow-300 min-h-full z-10 w-14 " >
-
+        
           <section className="flex items-center h-full ">
             <div className="text-right p-10">
               <h1 className="text-7xl font-bold leading-none  mb-10 ">
@@ -39,9 +37,9 @@ const Home = () => {
               <p className="pl-80 mb-10 text-2xl ">
 I am a Junior Full Stack web develloper thrilled about learning each day. I made this portfolio to share my current and future Projects
               </p>
-              <a  className="border-b border-gray-900 pb-2" onClick={Project_Section}>My Projects </a>
+              <Link to={"/Csharp"} className="border-b border-gray-900 pb-2" onClick={Project_Section}>My Projects </Link>
               <div className="flex mt-28  h-56   ">
-              <Java/>
+              <Python/>
 
               <Csharp/>
 
@@ -49,7 +47,7 @@ I am a Junior Full Stack web develloper thrilled about learning each day. I made
 
          
               </div>
-            </div>
+            </div>  
           
           </section>
 
@@ -73,10 +71,6 @@ I am a Junior Full Stack web develloper thrilled about learning each day. I made
     )
 
 }       
-
-
-
-
 
 
 
